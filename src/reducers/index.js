@@ -5,7 +5,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === 'RECEIVE_STOREFRONTS') {
-    return { storefronts: action.payload }
+    return Object.assign({}, state, { storefronts: action.payload })
   }
 
   if (action.type === 'SELECT_STOREFRONT') {

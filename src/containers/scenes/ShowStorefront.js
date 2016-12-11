@@ -8,7 +8,7 @@ function ShowStorefront({ navigator, currentStorefront }) {
   return (
     <StorefrontDetail
       storefront={currentStorefront}
-      onPressName={() => navigator.pop()}
+      onPressName={() => navigator.pop() /* essentially window.location.back() */}
     />
   )
 }
