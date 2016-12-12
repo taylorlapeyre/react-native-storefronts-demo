@@ -14,7 +14,9 @@ export default function StorefrontDetail({ storefront, onPressName }) {
   return (
     <View style={styles.container}>
       <Text onPress={onPressName}>{storefront.name}</Text>
+      <Text>{storefront.street_address}</Text>
       <Text>{storefront.city}</Text>
+      <Text>{storefront.postal_code}</Text>
     </View>
   )
 }

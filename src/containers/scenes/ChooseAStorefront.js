@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
 import StorefrontList from '../../components/StorefrontList'
 import { fetchStorefronts } from '../../actions/asynchronous'
@@ -30,6 +30,11 @@ class ChooseAStorefront extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <ActivityIndicator
+          animating={this.props.storefronts.length === 0}
+          style={{height: 80}}
+          size="large"
+        />
         {this.props.storefronts.length > 0 && (
           <StorefrontList
             storefronts={this.props.storefronts}
